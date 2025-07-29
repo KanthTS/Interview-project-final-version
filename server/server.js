@@ -1,6 +1,7 @@
 const exp=require('express');
 const {default:mongoose}=require('mongoose')
 const userApp = require('../server/APIS/userApis')
+const adminApp = require('./APIS/adminApis')
 const app=exp();
 //process.env
 require('dotenv').config()
@@ -16,3 +17,4 @@ mongoose.connect(process.env.DBURL)//it a returns promise, we catch the promise 
 //adding middle ware 
 app.use(exp.json())
 app.use('/user-api',userApp)
+app.use('/admin-api',adminApp)

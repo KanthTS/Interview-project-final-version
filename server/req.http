@@ -6,6 +6,29 @@ Content-Type: application/json
 {
     "email": "user1mail.com",
     "password":"12234",
-  
-  "isActive": true
+    "isActive": true
 }
+###
+POST http://localhost:3000/user-api/user-contribute
+Content-Type: application/json
+
+{
+  "question": "What is the use of useEffect in React?",
+  "tag": "React",
+  "company": "Meta",
+  "role": "Frontend Developer",
+  "solution": "useEffect is used to perform side effects like data fetching, subscriptions, etc."
+}
+###
+POST http://localhost:3000/user-api/user-contribute
+Content-Type: application/json
+
+{
+  "question": "What is the use of functions in C lang?",
+  "tag": "C lang",
+  "company": "Meta",
+  "role": "Software Developer",
+  "solution": "useEffect is used to perform side effects like data fetching, subscriptions, etc."
+}
+###
+GET http://localhost:3000/admin-api/contributeddata
