@@ -1,6 +1,6 @@
 import React from 'react'
 
-import image from '/Users/lakshmikanth/interview-project/client/images/interview-job-logo-design-vector-260nw-2015326151.webp'
+import image from '../images/interview-job-logo-design-vector-260nw-2015326151.webp'
 import { Link } from 'react-router-dom'
 function Header() {
   return (
