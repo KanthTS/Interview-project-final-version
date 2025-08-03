@@ -4,17 +4,15 @@ import { Link } from 'react-router-dom'
 function Home() {
   return (
     <div>
-     <div>
-       <marquee direction="right" >Interview Questions are ready to prepare and catch your highest package offer</marquee>
-     </div>
+     
       <div className="p-2">
-         <Link to="">JAVA</Link>
-          <Link to="">PYTHON</Link>
-          <Link to="">C++</Link>
-          <Link to="">C</Link>
-          <Link to="">JAVASCRIPT</Link>   
-           <Link to="">NODEJS</Link>  
-           <Link to="">SQL</Link>   
+         <Link to="">DSA</Link>
+          <Link to="">Backend</Link>
+          <Link to="">Frontend</Link>
+          <Link to="">Data Bases</Link>
+          <Link to="">DevOps</Link>   
+           <Link to="">Core CS</Link>  
+           <Link to="">SoftWare engneering</Link>   
       </div>
     </div>
   )
