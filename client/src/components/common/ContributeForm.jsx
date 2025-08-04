@@ -4,7 +4,8 @@ import {useNavigate} from 'react-router-dom'
 function ContributeForm() {
     const {register,handleSubmit,formState:{errors}}=useForm();
   return (
-    <div className='container  ' >
+    <div >
+    <div className='container ' >
         <div className='text-center mt-5'>
             <h2 className='mb-3'>Contribution Form</h2>
             <p className='mb-5'>Help others by sharing your interview experience</p>
@@ -51,6 +52,7 @@ function ContributeForm() {
             </form>
             </div>
         </div>
+    </div>
     </div>
   )
 }
