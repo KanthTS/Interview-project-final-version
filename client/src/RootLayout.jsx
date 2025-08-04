@@ -14,6 +14,7 @@ if (!PUBLISHABLE_KEY) {
 
   return (
      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+      
     <div style={{backgroundColor:" #1a1a1a"}}>
        
       <Header/>

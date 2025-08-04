@@ -1,9 +1,19 @@
 
-import React from 'react'
-
-function UserContext() {
+import React, { useState } from 'react'
+import { createContext } from 'react'
+ export const con=createContext();
+function UserContext({children}) {
+ 
+  let [cUser,setCuser]=useState({
+    firstName:"",
+    email:"",
+    password:"",
+    profileImageUrl:"",
+  });
   return (
-    <div>UserContext</div>
+    <div>
+      <con.Provider value={{cUser,setCuser}}>{children}</con.Provider>
+    </div>
   )
 }
 
