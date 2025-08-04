@@ -11,7 +11,7 @@ import Home from './components/common/Home.jsx'
 import ContributeForm from './components/common/ContributeForm.jsx'
 import Signin from './components/common/Signin.jsx'
 import Signup from './components/common/Signup.jsx'
-import { ClerkProvider } from '@clerk/clerk-react'
+
 const obj=createBrowserRouter([
   {
   path:'/',
@@ -20,7 +20,9 @@ const obj=createBrowserRouter([
 
     path:'',
     element:<Home/>
-  },{
+
+  },
+  {
     path:'signin',
     element:<Signin/>
   },
@@ -31,7 +33,7 @@ const obj=createBrowserRouter([
  
 ]
 }, {
-    path:'contributionForm',
+    path:'/contributionForm',
     element:<ContributeForm/>
   }])
 

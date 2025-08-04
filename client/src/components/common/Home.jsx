@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   return (
+
     <div>
      
       <div className="p-2">
@@ -13,7 +14,10 @@ function Home() {
           <Link to="">DevOps</Link>   
            <Link to="">Core CS</Link>  
            <Link to="">SoftWare engneering</Link>   
+
+   
       </div>
+
     </div>
   )
 }
