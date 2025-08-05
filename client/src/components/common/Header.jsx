@@ -29,6 +29,7 @@ function Header() {
    }
   
   return (
+<<<<<<< HEAD
     <div>
     <div style={{ backgroundColor: 'ButtonFace', padding: '10px', display: 'flex', justifyContent: 'space-between' }}>
       <div>
@@ -45,6 +46,17 @@ function Header() {
           <button type="button" onClick={signedOut}>SignOut</button>
         )}
       </div>
+=======
+    <div style={{backgroundColor:"rgb(21,32,43)",padding:"10px",display:"flex",justifyContent:"space-between"}}>
+      <div >
+        <img src={image} style={{width:"80px",borderRadius:"50%"}}/>
+      </div>
+    <div style={{display:"flex",justifyContent:"space-between",gap:"60px",margin:"20px"}}>
+      <button className='btn ' style={{background:'white',color:'black'}} onClick={()=>navigate('/contributionForm')}>ContributeForm</button>
+     <button className='btn ' style={{background:'white',color:'black'}} onClick={()=>navigate('/signin')}>SignIn</button>
+     <button className='btn' style={{background:'black',color:'white'}} onClick={()=>navigate('/signup')}>SignUp</button>
+     
+>>>>>>> adb3c0ab3cd8aef6910b98466b27366b9ccf7405
     </div>
       
   
