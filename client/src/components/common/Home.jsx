@@ -1,23 +1,8 @@
-import React, { useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import {useUser} from '@clerk/clerk-react'
-import {con} from '../../contexts/UserContext'
-function Home() {
-  const {cUser,setCuser}=useContext(con);
- let {isSignedIn,user,isLoaded}=useUser();
- console.log(isSignedIn);
- console.log(user);
- console.log(isLoaded);
 
-useEffect(()=>{
-   setCuser({
-    ...cUser,
-    firstName:user?.firstName,
-    profileImageUrl:user?.imageUrl,
-    email:user?.emailAddresses[0].emailAddress
-   })
- },[isLoaded])
- console.log(setCuser)
+import { Link } from 'react-router-dom'
+
+function Home() {
+
   return (
 
     <div>

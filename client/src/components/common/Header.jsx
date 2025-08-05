@@ -1,20 +1,53 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import  { useContext, useEffect } from 'react'
+
+import {  useClerk, useUser } from '@clerk/clerk-react'
+import {con} from '../../contexts/UserContext'
 import image from '../images/interview-job-logo-design-vector-260nw-2015326151.webp'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 function Header() {
-  const navigate=useNavigate();
+  const {signOut}=useClerk();
+ const nav=useNavigate();
+  const {cUser,setCuser}=useContext(con);
+ let {isSignedIn,user,isLoaded}=useUser();
+ console.log(isSignedIn);
+ console.log(user);
+ console.log(isLoaded);
+
+ useEffect(()=>{
+   setCuser({
+    ...cUser,
+    firstName:user?.firstName,
+    profileImageUrl:user?.imageUrl,
+    email:user?.emailAddresses[0].emailAddress
+   })
+ },[isLoaded])
+   async function signedOut(){
+   setCuser(null)
+   nav('/')
+   await signOut()
+   }
+  
   return (
-    <div style={{backgroundColor:"ButtonFace",padding:"10px",display:"flex",justifyContent:"space-between"}}>
-      <div >
-        <img src={image} style={{width:"80px",borderRadius:"50%"}}/>
+    <div>
+    <div style={{ backgroundColor: 'ButtonFace', padding: '10px', display: 'flex', justifyContent: 'space-between' }}>
+      <div>
+        <img src={image} style={{ width: '80px', borderRadius: '50%' }} alt="logo" />
       </div>
-    <div style={{display:"flex",justifyContent:"space-between",gap:"60px",margin:"20px"}}>
-      <button className='btn btn-primary' onClick={()=>navigate('/contributionForm')}>ContributeForm</button>
-     <button className='btn btn-primary' onClick={()=>navigate('/signin')}>SignIn</button>
-     <button className='btn btn-primary' onClick={()=>navigate('/signup')}>SignUp</button>
-     
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '60px', margin: '20px' }}>
+        <Link to="/contributionForm">ContributeForm</Link>
+        {!isSignedIn ? (
+          <>
+            <Link to="/signin">SignIn</Link>
+            <Link to="/signup">SignUp</Link>
+          </>
+        ) : (
+          <button type="button" onClick={signedOut}>SignOut</button>
+        )}
+      </div>
     </div>
+      
+  
     </div>
   )
 }
