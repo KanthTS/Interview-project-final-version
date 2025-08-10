@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import  { useContext, useEffect } from 'react'
 import {  useClerk, useUser } from '@clerk/clerk-react'
 import {con} from '../../contexts/UserContext'
@@ -14,11 +14,12 @@ function Header() {
  console.log(user);
  console.log(isLoaded);
 
- useEffect(()=>{
+useEffect(()=>{
    setCuser({
     ...cUser,
     firstName:user?.firstName,
     profileImageUrl:user?.imageUrl,
+        
     email:user?.emailAddresses[0].emailAddress
    })
  },[isLoaded])
@@ -27,7 +28,7 @@ function Header() {
    nav('/')
    await signOut()
    }
-  
+
   return (
 
     <div>

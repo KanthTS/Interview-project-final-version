@@ -3,7 +3,31 @@ import './Home.css'
 import HomeSlider from './HomeSlider'
 import DemoGraph from './DemoGraph'
 function Home() {
+const {cUser,setCuser}=useContext(con);
+ let {isSignedIn,user,isLoaded}=useUser();
+ console.log(isSignedIn);
+ console.log(user);
+ console.log(isLoaded);
 
+useEffect(()=>{
+   setCuser({
+    ...cUser,
+    firstName:user?.firstName,
+    profileImageUrl:user?.imageUrl,
+  
+    email:user?.emailAddresses[0].emailAddress
+   })
+ },[isLoaded])
+
+ let u={...cUser}
+ let res=null;
+ async function posting(){
+  res=await axios.post('http://localhost:3000/user-api/user',u)
+  let {message,payload}=res.data
+  console.log(res.data)
+  
+ }
+ posting();
   return (
 
     <div>

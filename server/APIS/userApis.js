@@ -4,13 +4,13 @@ const contributedSchema = require('../models/userContributemodel')//this one bri
 const contributedDataSchema = require('../models/contributedDatamodel');
 const userApp=exp.Router()//this one links it with server file and helps in using get,post and other operations 
 const expressasynchandler = require('express-async-handler')
-
+const contactModel=require('../models/ContactData')
 //creating new user 
 userApp.post("/user",expressasynchandler(async(req,res)=>{
     let newuser = req.body;
     let user = new userSchema(newuser);
     let newuserdoc = await user.save();//this line saves in mongoose database
-    res.status(201).send({message:newuserdoc.email,payload:newuserdoc})
+    res.status(201).send({message:newuserdoc,payload:newuserdoc})
 }))
 //user contributing 
 userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
@@ -18,6 +18,7 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
     // first we will get the contributed info from the request 
     // we will save it in mongoose db
     let contributedData = req.body;
+    console.log(contributedData);
     let data = new contributedSchema(contributedData);
     let contributedDoc = await data.save();
    
@@ -51,7 +52,12 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
          res.status(201).send({message:`question has been tagged and stroed under ${tag}`,payload:contributedDoc})
 }))
 
-
+userApp.post('/contact',expressasynchandler(async(req,res)=>{
+    let r=req.body;
+    let c=new contactModel(r);
+    let j=await c.save();
+    res.status(201).send({message:"contact",payload:j})
+}))
 
 //exporting 
 module.exports = userApp //this one helps in exporting

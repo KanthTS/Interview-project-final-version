@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 //defing user contribution schema 
 const userContributeSchema = new mongoose.Schema({
+    contributeId:{
+        type:String,
+    },
     question:{
         type:String,
     },
-    tag:{
+    topic:{
         type:String,
         required:true
     },
@@ -19,6 +22,10 @@ const userContributeSchema = new mongoose.Schema({
     },
     solution:{
         type:String,
+    },
+    isContributeActive:{
+        default:true,
+        type:Boolean
     }
 
 },{"strict":"throw"})
