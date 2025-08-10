@@ -1,0 +1,17 @@
+.contributeFormcss{
+     display: inline-block;      /* Makes the link behave like a box */
+  padding: 10px 20px;          /* Space inside the box */
+  border: 2px solid black;     /* Box border */
+  border-radius: 8px;          /* Rounded corners */
+  background-color: #f0f0f0;   /* Box background */
+  text-decoration: none;       /* Remove underline */
+  color: black;                /* Text color */
+  font-weight: bold; 
+  transition: background-color 0.2s ease;
+}
+.contributeFormcss:hover{
+    background-color: #ddd;
+}
+.home-title{
+    margin-top: 50px;
+}

@@ -1,10 +1,10 @@
 import React from 'react'
 import  { useContext, useEffect } from 'react'
-
 import {  useClerk, useUser } from '@clerk/clerk-react'
 import {con} from '../../contexts/UserContext'
 import image from '../images/interview-job-logo-design-vector-260nw-2015326151.webp'
 import { Link, useNavigate } from 'react-router-dom'
+import './Header.css'
 function Header() {
   const {signOut}=useClerk();
  const nav=useNavigate();
@@ -31,19 +31,23 @@ function Header() {
   return (
 
     <div>
-    <div style={{ backgroundColor: 'ButtonFace', padding: '10px', display: 'flex', justifyContent: 'space-between' }}>
+    <div style={{ backgroundColor: 'rgb(21, 32, 43)', padding: '10px', display: 'flex', justifyContent: 'space-between' }}>
       <div>
         <img src={image} style={{ width: '80px', borderRadius: '50%' }} alt="logo" />
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: '60px', margin: '20px' }}>
-        <Link to="/contributionForm">ContributeForm</Link>
+        
         {!isSignedIn ? (
           <>
-            <Link to="/signin">SignIn</Link>
-            <Link to="/signup">SignUp</Link>
+            <Link to="/signin" className='contributeFormcss'>SignIn</Link>
+            <Link to="/signup" className='contributeFormcss'>SignUp</Link>
           </>
         ) : (
-          <button type="button" onClick={signedOut}>SignOut</button>
+          <>
+          <Link to="/contributionForm" className='contributeFormcss'>ContributeForm</Link>
+          <button type="button" onClick={signedOut} className='contributeFormcss'>SignOut</button>
+          
+          </>
         )}
       </div>
     </div>

@@ -15,6 +15,7 @@ Content-Type: application/json
 {
   "question": "What is the use of useEffect in React?",
   "tag": "React",
+  
   "company": "Meta",
   "role": "Frontend Developer",
   "solution": "useEffect is used to perform side effects like data fetching, subscriptions, etc."
