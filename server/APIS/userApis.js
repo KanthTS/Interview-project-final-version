@@ -29,20 +29,20 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
 
         //checking and coutning the no of tagged questions 
         const tagged = req.body;
-        const tagInDb = await contributedDataSchema.findOne({"tag.tag":tagged.tag})
+        const tagInDb = await contributedDataSchema.findOne({"topic.tag":tagged.tag})
         const roleInDb = await contributedDataSchema.findOne({role:tagged.role})
         //checking if the tag already exists 
         if(tagInDb&&roleInDb){
             await contributedDataSchema.findOneAndUpdate(
-            {role:role,"tag.tag":tag},
-            {$push:{"tag.$.questions":{question}},$inc:{count:1,"tag.$.count":1}},
+            {role:role,"topic.tag":tag},
+            {$push:{"topic.$.questions":{question}},$inc:{count:1,"topic.$.count":1}},
             {upsert:true,new:true},
             
         );
         }else{
             await contributedDataSchema.findOneAndUpdate(
             {role:role},
-            {$push:{tag:{tag:tag,questions:[{question}],count:1}},$inc:{count:1}},
+            {$push:{topic:{tag:tag,questions:[{question}],count:1}},$inc:{count:1}},
 
             {upsert:true,new:true}
         );
