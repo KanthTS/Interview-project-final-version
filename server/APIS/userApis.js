@@ -23,7 +23,7 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
     let contributedDoc = await data.save();
    
     //now we will add it in tagged schema
-        const {tag,question,role}=contributedData;
+        const {topic,question,role}=contributedData;
 
          
 
