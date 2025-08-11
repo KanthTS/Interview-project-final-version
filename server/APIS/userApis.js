@@ -42,14 +42,14 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
         }else{
             await contributedDataSchema.findOneAndUpdate(
             {role:role},
-            {$push:{tag:{tag:tag,questions:[{question}],count:1}},$inc:{count:1}},
+            {$push:{tag:{topic:tag,questions:[{question}],count:1}},$inc:{count:1}},
 
             {upsert:true,new:true}
         );
         }
         
        
-         res.status(201).send({message:`question has been tagged and stroed under ${tag}`,payload:contributedDoc})
+         res.status(201).send({message:"contribute",payload:contributedDoc})
 }))
 
 userApp.post('/contact',expressasynchandler(async(req,res)=>{
