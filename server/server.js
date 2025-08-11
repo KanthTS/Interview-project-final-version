@@ -2,7 +2,9 @@ const exp=require('express');
 const {default:mongoose}=require('mongoose')
 const userApp = require('../server/APIS/userApis')
 const adminApp = require('./APIS/adminApis')
+const cors = require('cors')
 const app=exp();
+app.use(cors())
 //process.env
 require('dotenv').config()
 const port = process.env.PORT || 4000;

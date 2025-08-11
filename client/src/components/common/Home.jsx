@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 import HomeSlider from './HomeSlider'
 import DemoGraph from './DemoGraph'
+import ActualGraph from './ActualGraph'
 function Home() {
 
   return (
@@ -9,13 +10,13 @@ function Home() {
     <div>
      
        <div className="p-2 " style={{display:'flex',justifyContent:'space-between',borderRadius:'15px'}}>
-         <Link to=""  className='custom-link' style={{textDecoration:'none'}}>DSA</Link>
-          <Link to="" className='custom-link' style={{textDecoration:'none'}}>Backend</Link>
-          <Link to="" className='custom-link' style={{textDecoration:'none'}}>Frontend</Link>
-          <Link to="" className='custom-link' style={{textDecoration:'none'}}>Data Bases</Link>
-          <Link to="" className='custom-link' style={{textDecoration:'none'}}>DevOps</Link>   
-           <Link to="" className='custom-link' style={{textDecoration:'none'}}>Core CS</Link>  
-           <Link to="software" className='custom-link' style={{textDecoration:'none'}}>SoftWare engneering</Link>  
+         <Link to="/DSA"  className='custom-link' style={{textDecoration:'none'}}>DSA</Link>
+          <Link to="/Backend" className='custom-link' style={{textDecoration:'none'}}>Backend</Link>
+          <Link to="/Frontend Developer" className='custom-link' style={{textDecoration:'none'}}>Frontend Engineering</Link>
+          <Link to="/DataBases" className='custom-link' style={{textDecoration:'none'}}>Data Bases</Link>
+          <Link to="/DevOps" className='custom-link' style={{textDecoration:'none'}}>DevOps</Link>   
+           <Link to="/Software Developer" className='custom-link' style={{textDecoration:'none'}}>Core CS</Link>  
+           <Link to="/Software Eng" className='custom-link' style={{textDecoration:'none'}}>SoftWare engneering</Link>  
       </div>
       <div style={{color:'White'}} className='text-center home-title'>
         <h1 style={{fontSize:'55px'}}>The Smart Way to Prepare for </h1>

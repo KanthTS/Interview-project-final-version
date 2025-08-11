@@ -33,3 +33,6 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:3000/admin-api/contributeddata
+
+###
+GET http://localhost:3000/admin-api/contributeddata/Frontend%20Developer
