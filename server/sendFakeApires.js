@@ -28,14 +28,14 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-async function sendFakeRequest(role, tag) {
-  const question = sampleQuestions[tag] || `Explain ${tag} concepts.`;
+async function sendFakeRequest(role, topic) {
+  const question = sampleQuestions[topic] || `Explain ${topic} concepts.`;
   const company = getRandom(companies);
-  const solution = `This is a sample answer for ${tag}.`;
+  const solution = `This is a sample answer for ${topic}.`;
 
   const payload = {
     question,
-    tag,
+    topic,
     company,
     role,
     solution
@@ -43,9 +43,9 @@ async function sendFakeRequest(role, tag) {
 
   try {
     const res = await axios.post('http://localhost:3000/user-api/user-contribute', payload);
-    console.log(`Success for ${role} - ${tag}: ${res.status}`);
+    console.log(`Success for ${role} - ${topic}: ${res.status}`);
   } catch (err) {
-    console.error(`Failed for ${role} - ${tag}:`, err.message);
+    console.error(`Failed for ${role} - ${topic}:`, err.message);
   }
 }
 
