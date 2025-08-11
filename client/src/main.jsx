@@ -20,6 +20,7 @@ import Devops from './components/common/Devops.jsx'
 import Frontend from './components/common/Frontend.jsx'
 import Backend from './components/common/Backend.jsx'
 import UserContext from './contexts/UserContext.jsx'
+import Thanks from './components/common/Thanks.jsx'
 
 const obj=createBrowserRouter([
   {
@@ -45,10 +46,16 @@ const obj=createBrowserRouter([
   }
  
 ]
-}, {
+}, 
+{
     path:'/contributionForm',
     element:<ContributeForm/>
-  }])
+  },
+{
+  path:'/thanks',
+  element:<Thanks/>
+}
+])
 
 
 

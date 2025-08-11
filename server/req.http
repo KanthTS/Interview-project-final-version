@@ -3,7 +3,7 @@ GET http://localhost:3000/user-api
 POST http://localhost:3000/user-api/user 
 Content-Type: application/json
 
-{
+{   "firstName":"dfwe", 
     "email": "user1mail.com",
     "password":"12234",
     "isActive": true
@@ -36,3 +36,22 @@ GET http://localhost:3000/admin-api/contributeddata
 
 ###
 GET http://localhost:3000/admin-api/contributeddata/Frontend%20Developer
+post http://localhost:3000/user-api/contact
+Content-Type: application/json
+
+{
+  "firstName":"kanth",
+  "lastName":"TS",
+  "email":"tsidda@gmail.com",
+  "message":"kbwhvdbk"
+}
+
+###
+post http://localhost:3000/email-api/email
+Content-Type: application/json
+
+{  "from":"usagemail123@gmail.com",
+  "to":"tsiddakanth@gmail.com",
+  "subject":"kjnksd",
+  "message":"jnrd"
+}

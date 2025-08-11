@@ -5,6 +5,9 @@ const adminApp = require('./APIS/adminApis')
 const cors = require('cors')
 const app=exp();
 app.use(cors())
+const emailApp=require('./APIS/emailApi')
+
+
 //process.env
 require('dotenv').config()
 const port = process.env.PORT || 4000;
@@ -20,3 +23,4 @@ mongoose.connect(process.env.DBURL)//it a returns promise, we catch the promise 
 app.use(exp.json())
 app.use('/user-api',userApp)
 app.use('/admin-api',adminApp)
+app.use('/email-api',emailApp)
