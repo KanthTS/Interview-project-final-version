@@ -23,18 +23,18 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
     let contributedDoc = await data.save();
    
     //now we will add it in tagged schema
-        const {tag,question,role}=contributedData;
+        const {topic,question,role}=contributedData;
 
          
 
         //checking and coutning the no of tagged questions 
         const tagged = req.body;
-        const tagInDb = await contributedDataSchema.findOne({"tag.tag":tagged.tag})
+        const tagInDb = await contributedDataSchema.findOne({"tag.topic":tagged.tag})
         const roleInDb = await contributedDataSchema.findOne({role:tagged.role})
         //checking if the tag already exists 
         if(tagInDb&&roleInDb){
             await contributedDataSchema.findOneAndUpdate(
-            {role:role,"tag.tag":tag},
+            {role:role,"tag.topic":tag},
             {$push:{"tag.$.questions":{question}},$inc:{count:1,"tag.$.count":1}},
             {upsert:true,new:true},
             

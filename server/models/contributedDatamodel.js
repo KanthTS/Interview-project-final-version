@@ -4,9 +4,9 @@ const contributedDataSchema = new mongoose.Schema({
     role:{
         type:String,
     },
-    topic:{
+    tag:{
         type:[{
-        tag:String,
+        topic:String,
         questions:{
                 type:[{
                     question:String,
