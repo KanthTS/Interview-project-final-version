@@ -41,3 +41,13 @@ Content-Type: application/json
   "email":"tsidda@gmail.com",
   "message":"kbwhvdbk"
 }
+
+###
+post http://localhost:3000/email-api/email
+Content-Type: application/json
+
+{  "from":"usagemail123@gmail.com",
+  "to":"tsiddakanth@gmail.com",
+  "subject":"kjnksd",
+  "message":"jnrd"
+}

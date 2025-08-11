@@ -2,6 +2,7 @@ const exp=require('express');
 const {default:mongoose}=require('mongoose')
 const userApp = require('../server/APIS/userApis')
 const adminApp = require('./APIS/adminApis')
+const emailApp=require('./APIS/emailApi')
 const app=exp();
 const cors=require('cors');
 app.use(cors());
@@ -20,3 +21,4 @@ mongoose.connect(process.env.DBURL)//it a returns promise, we catch the promise 
 app.use(exp.json())
 app.use('/user-api',userApp)
 app.use('/admin-api',adminApp)
+app.use('/email-api',emailApp)

@@ -12,7 +12,17 @@ function Footer() {
     if(res.data.message=="contact"){
       setSubmitted(true);
     }
+    res=await axios.post('http://localhost:3000/email-api/email',{
+      to:obj.email,
+     subject: "Always Be Ready",
+        message: "Thank you for your interest. We’ll get back to you soon."
+
+    })
   }
+    
+   
+  
+
   console.log(submitted)
   return (
     <div>
