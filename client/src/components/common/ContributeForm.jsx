@@ -15,7 +15,7 @@ function ContributeForm() {
      res=await  axios.post('http://localhost:3000/user-api/user-contribute',obj)
       let {message,payload}=res.data;
       console.log(res.data)
-      if(res.data.message=="contributedData"){
+      if(res.data.message=="contribute"){
        nav('/thanks')
       }else{
          setErr('no data present')

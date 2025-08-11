@@ -4,15 +4,15 @@ const contributedDataSchema = new mongoose.Schema({
     role:{
         type:String,
     },
-    topic:{
-        type:[{
-        tag:String,
+    tag:
+        [{
+        topic:String,
         questions:{
                 type:[{
                     question:String,             
                 }]
-            },count:{type:Number},
-        }]},
+            },count:Number,
+        }],
     
     count:{type:Number},
     

@@ -29,27 +29,27 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
 
         //checking and coutning the no of tagged questions 
         const tagged = req.body;
-        const tagInDb = await contributedDataSchema.findOne({"topic.tag":tagged.tag})
+        const tagInDb = await contributedDataSchema.findOne({"tag.topic":tagged.tag})
         const roleInDb = await contributedDataSchema.findOne({role:tagged.role})
         //checking if the tag already exists 
         if(tagInDb&&roleInDb){
             await contributedDataSchema.findOneAndUpdate(
-            {role:role,"topic.tag":tag},
-            {$push:{"topic.$.questions":{question}},$inc:{count:1,"topic.$.count":1}},
+            {role:role,"tag.topic":tag},
+            {$push:{"tag.$.questions":{question}},$inc:{count:1,"tag.$.count":1}},
             {upsert:true,new:true},
             
         );
         }else{
             await contributedDataSchema.findOneAndUpdate(
             {role:role},
-            {$push:{topic:{tag:tag,questions:[{question}],count:1}},$inc:{count:1}},
+            {$push:{tag:{topic:tag,questions:[{question}],count:1}},$inc:{count:1}},
 
             {upsert:true,new:true}
         );
         }
         
        
-         res.status(201).send({message:`question has been tagged and stroed under ${tag}`,payload:contributedDoc})
+         res.status(201).send({message:"contribute",payload:contributedDoc})
 }))
 
 userApp.post('/contact',expressasynchandler(async(req,res)=>{
