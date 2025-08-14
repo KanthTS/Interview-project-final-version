@@ -62,7 +62,7 @@ function ActualGraph() {
   return <div>Loading chart...</div>;
 }
   return (
-    <div>
+    <div className='home-graph container'>
         <Bar data={chartdata} options={options}></Bar>
     </div>
   )

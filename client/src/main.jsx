@@ -43,7 +43,11 @@ const obj=createBrowserRouter([
   {
     path:"/:role",
     element:<ActualGraph/>,
-  }
+  },
+  {
+  path:'/thanks',
+  element:<Thanks/>
+}
  
 ]
 }, 
@@ -51,10 +55,7 @@ const obj=createBrowserRouter([
     path:'/contributionForm',
     element:<ContributeForm/>
   },
-{
-  path:'/thanks',
-  element:<Thanks/>
-}
+
 ])
 
 

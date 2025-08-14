@@ -9,6 +9,7 @@ import axios from 'axios'
 import {useUser} from '@clerk/clerk-react'
 function Home() {
 const {cUser,setCuser}=useContext(con);
+
  let {isSignedIn,user,isLoaded}=useUser();
  console.log(isSignedIn);
  console.log(user);
@@ -33,6 +34,8 @@ useEffect(()=>{
   
  }
  posting();
+
+ 
   return (
 
     <div>
@@ -54,9 +57,11 @@ useEffect(()=>{
         <h1 style={{color:"white"}} className='d-flex justify-content-center'>Demo Graph</h1>
         <DemoGraph/>
       </div>
+    
       <div className='homeslider-css container'>
         <HomeSlider/>
       </div>
+
     </div>
   )
 }
