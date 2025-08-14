@@ -1,0 +1,119 @@
+/* Main container */
+.thanks-container {
+  background-color: #121212;
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+}
+
+/* Card layout */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card styling */
+.thanks-card {
+  background: linear-gradient(145deg, #1f1f1f, #292929);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thanks-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Card header */
+.card-header {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.card-header img {
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Card body */
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+}
+
+.card-body .lead {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.card-body .text-info {
+  color: #00bcd4;
+}
+
+/* Thank you message */
+.thank-you-message {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 3rem 0;
+  color: #ffcc00;
+}
+
+/* Back button */
+.back-button {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: 2px solid #ffcc00;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: #ffcc00;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #ffcc00;
+  color: black;
+}
+.exclusive-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.exclusive-button {
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: black;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.exclusive-button:hover {
+  background: linear-gradient(135deg, #ff9900, #ffcc00);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}

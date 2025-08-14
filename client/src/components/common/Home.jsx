@@ -1,20 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Home.css'
 import HomeSlider from './HomeSlider'
 import DemoGraph from './DemoGraph'
-
+import './Thanks.css';
 import { useContext ,useEffect} from 'react'
 import {con} from '../../contexts/UserContext'
 import axios from 'axios'
 import {useUser} from '@clerk/clerk-react'
 function Home() {
 const {cUser,setCuser}=useContext(con);
-
+const nav=useNavigate();
  let {isSignedIn,user,isLoaded}=useUser();
  console.log(isSignedIn);
  console.log(user);
  console.log(isLoaded);
-
+   function moving(){
+    nav('/thanks')
+   }
 useEffect(()=>{
    setCuser({
     ...cUser,
@@ -38,21 +40,25 @@ useEffect(()=>{
  
   return (
 
+   isSignedIn===false?<>
     <div>
      
        <div className="p-2 " style={{display:'flex',justifyContent:'space-between',borderRadius:'15px'}}>
-         <Link to="/DSA"  className='custom-link' style={{textDecoration:'none'}}>DSA</Link>
-          <Link to="/Backend" className='custom-link' style={{textDecoration:'none'}}>Backend</Link>
-          <Link to="/Frontend Developer" className='custom-link' style={{textDecoration:'none'}}>Frontend Engineering</Link>
-          <Link to="/DataBases" className='custom-link' style={{textDecoration:'none'}}>Data Bases</Link>
-          <Link to="/DevOps" className='custom-link' style={{textDecoration:'none'}}>DevOps</Link>   
-           <Link to="/Software Developer" className='custom-link' style={{textDecoration:'none'}}>Core CS</Link>  
-           <Link to="/Software Eng" className='custom-link' style={{textDecoration:'none'}}>SoftWare engneering</Link>  
+         <Link to="/dsa"  className='custom-link' style={{textDecoration:'none'}}>DSA</Link>
+          <Link to="/backend" className='custom-link' style={{textDecoration:'none'}}>Backend</Link>
+          <Link to="/frontend" className='custom-link' style={{textDecoration:'none'}}>Frontend Engineering</Link>
+          <Link to="/database" className='custom-link' style={{textDecoration:'none'}}>Data Bases</Link>
+          <Link to="/devops" className='custom-link' style={{textDecoration:'none'}}>DevOps</Link>   
+           <Link to="/corecs" className='custom-link' style={{textDecoration:'none'}}>Core CS</Link>  
+           <Link to="/software" className='custom-link' style={{textDecoration:'none'}}>SoftWare engneering</Link>  
       </div>
+     
       <div style={{color:'White'}} className='text-center home-title'>
         <h1 style={{fontSize:'55px'}}>The Smart Way to Prepare for </h1>
         <h1 style={{fontSize:'55px'}}>Your Next Interview</h1>
       </div>
+  
+
       <div className='home-graph container'>
         <h1 style={{color:"white"}} className='d-flex justify-content-center'>Demo Graph</h1>
         <DemoGraph/>
@@ -63,6 +69,44 @@ useEffect(()=>{
       </div>
 
     </div>
+   </>:<>
+    <div>
+     
+       <div className="p-2 " style={{display:'flex',justifyContent:'space-between',borderRadius:'15px'}}>
+         <Link to="/dsa"  className='custom-link' style={{textDecoration:'none'}}>DSA</Link>
+          <Link to="/backend" className='custom-link' style={{textDecoration:'none'}}>Backend</Link>
+          <Link to="/frontend" className='custom-link' style={{textDecoration:'none'}}>Frontend Engineering</Link>
+          <Link to="/database" className='custom-link' style={{textDecoration:'none'}}>Data Bases</Link>
+          <Link to="/devops" className='custom-link' style={{textDecoration:'none'}}>DevOps</Link>   
+           <Link to="/corecs" className='custom-link' style={{textDecoration:'none'}}>Core CS</Link>  
+           <Link to="/software" className='custom-link' style={{textDecoration:'none'}}>SoftWare engneering</Link>  
+      </div>
+     
+      <div style={{color:'White'}} className='text-center home-title'>
+        <h1 style={{fontSize:'55px'}}>The Smart Way to Prepare for </h1>
+        <h1 style={{fontSize:'55px'}}>Your Next Interview</h1>
+      </div>
+  
+
+   
+   <div className="exclusive-button-container">
+  <button type="button" className="exclusive-button" onClick={moving}>
+    For Exclusively Interviewed Questions Only
+  </button>
+</div>
+   
+      <div className='home-graph container'>
+        <h1 style={{color:"white"}} className='d-flex justify-content-center'>Demo Graph</h1>
+        <DemoGraph/>
+      </div>
+    
+      <div className='homeslider-css container'>
+        <HomeSlider/>
+      </div>
+
+    </div>
+   
+   </>
   )
 }
 

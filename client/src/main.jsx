@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import RootLayout from './RootLayout.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/common/Home.jsx'
-import ActualGraph from './components/common/actualGraph.jsx'
+// import ActualGraph from './components/common/actualGraph.jsx'
 import ContributeForm from './components/common/ContributeForm.jsx'
 import Signin from './components/common/Signin.jsx'
 import Signup from './components/common/Signup.jsx'
@@ -40,13 +40,40 @@ const obj=createBrowserRouter([
     path:'signup',
     element:<Signup/>
   },
-  {
-    path:"/:role",
-    element:<ActualGraph/>,
-  },
+  // {
+  //   path:"/:role",
+  //   element:<ActualGraph/>,
+  // },
   {
   path:'/thanks',
   element:<Thanks/>
+},{
+  path:'backend',
+  element:<Backend/>
+},
+{
+  path:'frontend',
+  element:<Frontend/>
+},
+{
+  path:'dsa',
+  element:<DSA/>
+},
+{
+  path:'devops',
+  element:<Devops/>
+},
+{
+  path:'database',
+  element:<DataBases/>
+},
+{
+  path:'software',
+  element:<Software/>
+},
+{
+  path:'corecs',
+  element:<CoreCS/>
 }
  
 ]
