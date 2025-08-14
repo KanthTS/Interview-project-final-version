@@ -13,6 +13,7 @@ function ActualGraph() {
         axios.get(`http://localhost:3000/admin-api/contributeddata/${role}`)
         .then((res)=>{
             const data = res.data;
+            console.log(res.data.payload)
             const tags=[]
             const count =[]
             data.payload.forEach(roleObj=>{
@@ -39,9 +40,10 @@ function ActualGraph() {
           console.log(err)
         })
     },[role])
+    console.log(role)
     const options={
                     indexAxis:"y",
-                    response:true,
+                    responsive:true,
                     plugins:{
                         legend: { position: "top" },
                   title: { display: true, text: "Horizontal Bar Chart" },
@@ -49,7 +51,7 @@ function ActualGraph() {
                     
                     elements:{
                         bar:{
-                            borderwidth:1,
+                            borderWidth:1,
                             borderSkipped:false,
                             barThickness:10,
                                 

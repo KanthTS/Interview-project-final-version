@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 import HomeSlider from './HomeSlider'
 import DemoGraph from './DemoGraph'
-import ActualGraph from './ActualGraph'
+
 import { useContext ,useEffect} from 'react'
 import {con} from '../../contexts/UserContext'
 import axios from 'axios'

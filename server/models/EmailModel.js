@@ -10,6 +10,10 @@ subject:{
 },
 message:{
     type:String
+},
+isEmailActive:{
+     type:Boolean,
+        default:true
 }
 },{'strict':'throw'})
 

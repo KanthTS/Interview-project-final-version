@@ -15,7 +15,10 @@ const contributedDataSchema = new mongoose.Schema({
         }],
     
     count:{type:Number},
-    
+    isContributeActive:{
+     default:true,
+     type:Boolean
+    }
 },{"strict":"throw"})
 //creating a db using the schema
 const contributedDataSchemamodel=mongoose.model('contributeddata',contributedDataSchema)

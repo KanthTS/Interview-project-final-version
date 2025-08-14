@@ -5,6 +5,11 @@ const nodemailer = require('nodemailer');
 const emailApp = exp.Router();
 const emailModel = require('../models/EmailModel');
 
+const {requireAuth, clerkMiddleware}=require('@clerk/express')
+emailApp.use(clerkMiddleware())
+
+require('dotenv').config()
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -37,4 +42,11 @@ emailApp.post('/email', async (req, res) => {
   }
 });
 
+emailApp.get('/emails',requireAuth({signInUrl:"unauthorized"}),async(req,res)=>{
+  let j=await emailModel.find({isEmailActive:true})
+    res.status(200).send({message:"getemails",payload:j})
+})
+emailApp.get('/unauthorized',async(req,res)=>{
+    res.send({message:"pleaze relogin again unauthorized request"})
+})
 module.exports = emailApp;

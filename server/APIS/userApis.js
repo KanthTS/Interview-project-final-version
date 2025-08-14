@@ -6,11 +6,28 @@ const userApp=exp.Router()//this one links it with server file and helps in usin
 const expressasynchandler = require('express-async-handler')
 const contactModel=require('../models/ContactData')
 //creating new user 
+const {requireAuth, clerkMiddleware}=require('@clerk/express')
+userApp.use(clerkMiddleware())
+
+require('dotenv').config()
 userApp.post("/user",expressasynchandler(async(req,res)=>{
     let newuser = req.body;
     let user = new userSchema(newuser);
     let newuserdoc = await user.save();//this line saves in mongoose database
     res.status(201).send({message:newuserdoc,payload:newuserdoc})
+}))
+userApp.get('/unauthorized',async(req,res)=>{
+    res.send({message:"pleaze relogin again unauthorized request"})
+})
+userApp.get("/users",requireAuth({signInUrl:"unauthorized"}),expressasynchandler(async(req,res)=>{
+    
+    let j=await userSchema.find({isActive:true})
+    res.status(200).send({message:"getDetails",payload:j})
+}))
+userApp.get("/user-contributes",requireAuth({signInUrl:"unauthorized"}),expressasynchandler(async(req,res)=>{
+    
+    let j=await contributedSchema.find({isContributeActive:true})
+    res.status(200).send({message:"getDetails",payload:j})
 }))
 //user contributing 
 userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
@@ -23,7 +40,7 @@ userApp.post("/user-contribute",expressasynchandler(async(req,res)=>{
     let contributedDoc = await data.save();
    
     //now we will add it in tagged schema
-        const {topic,question,role}=contributedData;
+        const {tag,question,role}=contributedData;
 
          
 
@@ -59,5 +76,10 @@ userApp.post('/contact',expressasynchandler(async(req,res)=>{
     res.status(201).send({message:"contact",payload:j})
 }))
 
+userApp.get("/contacts",requireAuth({signInUrl:"unauthorized"}),expressasynchandler(async(req,res)=>{
+    
+    let j=await contactModel.find({isContactActive:true})
+    res.status(200).send({message:"getcontacts",payload:j})
+}))
 //exporting 
 module.exports = userApp //this one helps in exporting

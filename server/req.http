@@ -1,4 +1,4 @@
-GET http://localhost:3000/user-api
+get http://localhost:3000/user-api/users
 ###
 POST http://localhost:3000/user-api/user 
 Content-Type: application/json
@@ -56,3 +56,11 @@ Content-Type: application/json
   "subject":"kjnksd",
   "message":"jnrd"
 }
+###
+get http://localhost:3000/email-api/emails
+
+###
+get http://localhost:3000/user-api/contacts
+
+###
+get http://localhost:3000/user-api/user-contributes

@@ -17,6 +17,10 @@ const contactSchema=new mongoose.Schema({
     message:{
         type:String,
         required:true
+    },
+    isContactActive:{
+        type:Boolean,
+        default:true
     }
 
 },{'strict':'throw'})
