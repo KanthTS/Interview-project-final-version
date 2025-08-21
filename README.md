@@ -4,11 +4,12 @@ A **MERN stack** web application for managing and tracking interview-related dat
 This project was developed as part of an interview assignment and demonstrates skills in **full-stack development**, **RESTful APIs**, and **secure authentication**.
 
 ---
+<img width="1431" height="621" alt="Screenshot 2025-08-21 at 7 44 33 PM" src="https://github.com/user-attachments/assets/e1959fe6-c02a-4c32-8308-916d180f426c" />
+
 <img width="1403" height="526" alt="Screenshot 2025-08-21 at 7 49 56 PM" src="https://github.com/user-attachments/assets/7fadff48-daf8-4a60-9a37-43c905edda1d" />
 
 <img width="924" height="650" alt="Screenshot 2025-08-21 at 7 49 37 PM" src="https://github.com/user-attachments/assets/a6f7bb64-1e96-4ccc-a6b5-8df8c1b61c61" />
  <img width="1424" height="669" alt="Screenshot 2025-08-21 at 7 45 00 PM" src="https://github.com/user-attachments/assets/64936866-5039-405f-a4a8-c6e2da316b82" />
-<img width="1431" height="621" alt="Screenshot 2025-08-21 at 7 44 33 PM" src="https://github.com/user-attachments/assets/e1959fe6-c02a-4c32-8308-916d180f426c" />
 
 
 ## 📜 Table of Contents
