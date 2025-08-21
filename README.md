@@ -32,7 +32,7 @@ The application allows:
 
 ## 🛠 Tech Stack
 
-- **Frontend:** React.js, React Router, Axios, Tailwind CSS
+- **Frontend:** React.js, JS, Axios,  CSS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB with Mongoose ODM
 - **Authentication:** JWT (JSON Web Token)
