@@ -39,7 +39,7 @@ The application allows:
 
 ## 🛠 Tech Stack
 
-- **Frontend:** React.js, JS, Axios,  CSS
+- **Frontend:** React.js, JS, Axios,  CSS,Authentication using Clerk
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB with Mongoose ODM
 - **Authentication:** JWT (JSON Web Token)
