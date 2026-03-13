@@ -30,11 +30,10 @@ useEffect(()=>{
  let u={...cUser}
 
  async function posting(){
-  let res=await axios.post('http://localhost:3000/user-api/user',u)
+  let res=await axios.post('https://interview-project-final-version.onrender.com/user-api/user',u)
   let {message,payload}=res.data
   console.log(res.data)
-  
- }
+   }
  posting();
 
  

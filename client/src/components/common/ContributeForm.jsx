@@ -12,7 +12,7 @@ function ContributeForm() {
     obj.contributeId = Date.now();
     obj.isContributeActive = true;
     try {
-      let res = await axios.post('http://localhost:3000/user-api/user-contribute', obj);
+      let res = await axios.post('https://interview-project-final-version.onrender.com/user-api/user-contribute', obj);
       let { message } = res.data;
       if (message === "contribute") {
         nav('/thanks');

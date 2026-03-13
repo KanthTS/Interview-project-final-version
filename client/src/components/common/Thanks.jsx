@@ -19,7 +19,7 @@ function Thanks() {
   async function accessingdata() {
     const token = await getToken();
     try {
-      let res = await axios.get('http://localhost:3000/user-api/user-contributes', {
+      let res = await axios.get('https://interview-project-final-version.onrender.com/user-api/user-contributes', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

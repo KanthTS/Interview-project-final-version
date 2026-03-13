@@ -8,11 +8,11 @@ function Footer() {
   const [submitted,setSubmitted]=useState(false);
   async function contacting(obj){
     console.log(obj);
-    let res=await axios.post('http://localhost:3000/user-api/contact',obj)
+    let res=await axios.post('https://interview-project-final-version.onrender.com/user-api/contact',obj)
     if(res.data.message=="contact"){
       setSubmitted(true);
     }
-    res=await axios.post('http://localhost:3000/email-api/email',{
+    res=await axios.post('https://interview-project-final-version.onrender.com/email-api/email',{
       to:obj.email,
      subject: "Always Be Ready",
         message: "Thank you for your interest. We’ll get back to you soon."
